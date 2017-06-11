@@ -1,5 +1,5 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
-import { List, buildSampleList } from './list';
+import { List } from './list';
 
 @Component({
   selector: 'app-list',

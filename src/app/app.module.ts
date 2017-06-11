@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { ItemComponent } from './item.component';
 import { ListComponent } from './list.component';
 
+import { ListService } from './list.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +20,7 @@ import { ListComponent } from './list.component';
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [ListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,5 +1,8 @@
 import { Component , OnInit } from '@angular/core';
-import { List, buildSampleList } from './list';
+
+import { ListService } from './list.service';
+
+import { List } from './list';
 
 @Component({
   selector: 'app-root',
@@ -10,10 +13,13 @@ export class AppComponent implements OnInit {
   title = 'End of Stuff!';
   lists: List[];
 
+  constructor(private listService: ListService) { }
+
+  populateLists(): void {
+    this.listService.getLists().then(lists => this.lists = lists);
+  }
+
   ngOnInit() {
-    const MIN_COUNT = 9;
-    const MAX_COUNT = 15;
-    const LIST_COUNT = MIN_COUNT + Math.floor((1 + MAX_COUNT - MIN_COUNT) * Math.random());
-    this.lists = Array.from(new Array(LIST_COUNT), buildSampleList);
+    this.populateLists();
   }
 }
