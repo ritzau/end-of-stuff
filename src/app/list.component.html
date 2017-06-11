@@ -1,0 +1,6 @@
+<section>
+  <h1 contenteditable>{{list.title}}</h1>
+  <ul>
+    <app-item *ngFor="let item of list.items" [item]="item"></app-item>
+  </ul>
+</section>
